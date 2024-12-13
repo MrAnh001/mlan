@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Bài Tập</title>
+    <style>
+        /* Thiết lập font, margin, padding cho body */
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            /* Đảm bảo các hoa không tràn ra ngoài màn hình */
+        }
+        /* Hiệu ứng hoa rơi */
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        
+        .flower {
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 50%;
+            opacity: 0;
+            animation: fall linear infinite;
+            pointer-events: none;
+            /* Đảm bảo hoa không cản trở các phần tử khác */
+        }
+        /* Tạo nhiều màu sắc cho hoa */
+        
+        .flower:nth-child(odd) {
+            background-color: #ff69b4;
+            /* Màu hồng */
+        }
+        
+        .flower:nth-child(even) {
+            background-color: #ff1493;
+            /* Màu đỏ đậm */
+        }
+        /* Banner */
+        
+        .banner {
+            background-image: url("https://static.vecteezy.com/system/resources/previews/004/328/302/large_2x/merry-christmas-banner-with-cute-santa-claus-cartoon-free-vector.jpg");
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .banner h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        /* Thanh menu điều hướng dưới banner */
+        
+        nav {
+            background-color: #333;
+            width: 100%;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #ffeb3b;
+            color: black;
+            border-radius: 5px;
+        }
+        /* Nội dung chính */
+        
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            margin: 20px;
+            margin-top: 20px;
+        }
+        /* Cột trái: Danh sách bài tập */
+        
+        .left-column {
+            width: 30%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .left-column h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .left-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .left-column li {
+            margin: 12px 0;
+        }
+        
+        .left-column a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .left-column a:hover {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+        /* Cột phải: Bảng bài tập */
+        
+        .right-column {
+            width: 65%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        iframe {
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+        }
+        /* Các hiệu ứng cho phần nội dung */
+        
+        .content-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Báo Cáo Bài Tập</h1>
+        <p>Trang web học tập về các bài tập tin học 12</p>
+    </div>
+
+    <!-- Menu điều hướng dưới banner -->
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/ptbac2.html')">Giải phương trình</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/cadao.html')">Ca Dao Tục Ngữ</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/clb.html')">Câu lạc bộ</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/bangmaucss.html')">Bảng màu CSS</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/dkmonthi.html')">Mẫu đăng kí TN</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/danhsachclb.html')">Danh sách câu lạc bộ</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/dsmonhoc.html')">Danh sách môn học</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('http://c3nguyenchithanh.daknong.edu.vn/sinh-hoat-chao-mung-ngay-phu-nu-viet-nam-2010.html')">Giải bóng chuyền nữ</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/gioithieuhdngoaikhoa.html')">Hoạt động ngoại khóa</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/chiadetri.html')">Kỹ thuật chia để trị</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/lscss.html')">Lịch sử CSS</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/trang.html')">Bài tập liên kết</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/menudoan.html')">Menu thức ăn</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/tinhoc12.html')">Giới thiệu tin học 12</a></li>
+            <li><a href="javascript:void(0);" onclick="loadContent('empty/tonghop.html')">Trang web đầu tiên</a></li>
+        </ul>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <div class="main-content">
+        <!-- Cột trái: Danh sách bài tập -->
+        <div class="left-column">
+            <h2>Danh Sách Bài Tập</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/ptbac2.html')">Giải phương trình</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/cadao.html')">Ca Dao Tục Ngữ Việt Nam</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/clb.html')">Thông tin câu lạc bộ</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/bangmaucss.html')">Bảng màu của CSS</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/dkmonthi.html')">Mẫu đăng kí Tốt Nghiệp</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/danhsachclb.html')">Danh sách câu lạc bộ</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/dsmonhoc.html')">Danh sách các môn học</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('http://c3nguyenchithanh.daknong.edu.vn/sinh-hoat-chao-mung-ngay-phu-nu-viet-nam-2010.html')">Giải bóng chuyền nữ</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/gioithieuhdngoaikhoa.html')">Giới thiệu các hoạt động ngoại khóa</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/chiadetri.html')">Giới thiệu kỹ thuật chia để trị</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/lscss.html')">Giới thiệu lịch sử CSS</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/trang.html')">Giới thiệu bài tập liên kết</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/menudoan.html')">Menu thức ăn</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/tinhoc12.html')">Giới thiệu Tin học 12</a></li>
+                <li><a href="javascript:void(0);" onclick="loadContent('empty/tonghop.html')">Trang web đầu tiên</a></li>
+            </ul>
+        </div>
+
+        <!-- Cột phải: Bảng bài tập -->
+        <div class="right-column">
+            <div class="content-section" id="content">
+                <!-- Nội dung bài tập sẽ được tải ở đây -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadContent(url) {
+            var contentArea = document.getElementById('content');
+            contentArea.innerHTML = '<iframe src="' + url + '"></iframe>';
+        }
+
+        // Hàm tạo hoa rơi
+        function createFallingFlowers() {
+            var numFlowers = 20; // Số lượng hoa
+            for (var i = 0; i < numFlowers; i++) {
+                var flower = document.createElement('div');
+                flower.classList.add('flower');
+                document.body.appendChild(flower);
+
+                var randomLeft = Math.random() * window.innerWidth; // Vị trí ngẫu nhiên từ trái sang phải
+                var animationDuration = Math.random() * 3 + 4; // Thời gian rơi ngẫu nhiên (4s - 7s)
+
+                flower.style.left = randomLeft + 'px';
+                flower.style.animationDuration = animationDuration + 's';
+                flower.style.animationDelay = Math.random() * 2 + 's';
+            }
+        }
+
+        // Gọi hàm khi trang tải xong
+        window.onload = createFallingFlowers;
+
+        // Xử lý sự kiện khi cuộn trang
+        window.onscroll = function() {
+            if (window.scrollY > 100) {
+                document.body.style.overflow = 'auto'; // Cho phép cuộn khi cuộn đến một vị trí nhất định
+            }
+        };
+    </script>
+
+</body>
+
+</html>

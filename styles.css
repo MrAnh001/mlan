@@ -1,0 +1,44 @@
+/* styles.css */
+
+
+/* Hiệu ứng hoa rơi */
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.flower {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fall linear infinite;
+    pointer-events: none;
+    /* Đảm bảo hoa không cản trở các phần tử khác */
+}
+
+
+/* Tạo nhiều màu sắc cho hoa */
+
+.flower:nth-child(odd) {
+    background-color: #eee4e9d7;
+    /* Màu hồng */
+}
+
+.flower:nth-child(even) {
+    background-color: #e9e4e7;
+    /* Màu đỏ đậm */
+}
+
+
+/* Các kiểu CSS còn lại của bạn... */

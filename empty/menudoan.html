@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Thức Ăn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .menu-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item h2 {
+            margin: 10px 0;
+            color: #007bff;
+        }
+        
+        .menu-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Menu Thức Ăn</h1>
+    </header>
+
+    <div class="menu">
+        <!-- Món 1 -->
+        <div class="menu-item">
+            <h2>Phở Bò</h2>
+            <p>Phở bò với nước dùng thơm ngon, thịt bò tươi mềm. Một món ăn đặc trưng của Việt Nam.</p>
+            <p class="price">50.000 VNĐ</p>
+        </div>
+
+        <!-- Món 2 -->
+        <div class="menu-item">
+            <h2>Gỏi Cuốn</h2>
+            <p>Gỏi cuốn tươi mát, cuốn với rau sống, tôm và thịt heo, chấm với nước mắm pha chế đặc biệt.</p>
+            <p class="price">25.000 VNĐ</p>
+        </div>
+
+        <!-- Món 3 -->
+        <div class="menu-item">
+            <h2>Bánh Xèo</h2>
+            <p>Bánh xèo giòn rụm, nhân tôm thịt, ăn kèm với rau sống và nước mắm chua ngọt.</p>
+            <p class="price">40.000 VNĐ</p>
+        </div>
+
+        <!-- Món 4 -->
+        <div class="menu-item">
+            <h2>Cơm Tấm Sườn Nướng</h2>
+            <p>Cơm tấm với sườn nướng thơm lừng, kèm với trứng ốp la và dưa leo.</p>
+            <p class="price">45.000 VNĐ</p>
+        </div>
+
+        <!-- Món 5 -->
+        <div class="menu-item">
+            <h2>Hủ Tiếu Nam Vang</h2>
+            <p>Hủ tiếu Nam Vang với nước dùng đậm đà, thịt gà, tôm và thịt nạc.</p>
+            <p class="price">55.000 VNĐ</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
